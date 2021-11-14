@@ -158,7 +158,8 @@ Following the same steps to secure error log file because it can potentially con
  # Enforce hardened permission
  sudo chmod 660 /var/log/gunicorn.error.log
  
- # Finally, running Gunicorn on port 8089 as a daemon with 3 workers, custom access log format, and 
+ # Finally, running Gunicorn on port 8089 as a daemon with 3 workers, custom access log format, and error log dumped to file
+ 
  gunicorn assignment.wsgi --name assignment-django --workers 3 --bind :8089 --access-logfile /var/log/gunicorn.access.log --access-logformat '"%(h)s ---  %(t)s "%(r)s" "%(a)s"' --error-logfile "/var/log/gunicorn.error.log" --daemon
  ```
  
