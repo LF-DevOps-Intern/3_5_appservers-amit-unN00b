@@ -64,6 +64,15 @@
  
  - Deploy the war using glassfish app server.
 
+ First we need to start GlassFish server.
+ 
+ ```console
+ cd /opt/glassfish6/bin/asadmin
+ 
+ ./asadmin start-domain
+ ./asadmin deploy ~/assignment-maven/target/assignment-maven.war
+ ```
+
  ![image](https://user-images.githubusercontent.com/23631617/141670169-556012c0-e0ab-4eaf-9657-5a3afa19b9fe.png)
  
  ![image](https://user-images.githubusercontent.com/23631617/141670205-9592bf38-6558-46d7-a325-38ad7228c098.png)
