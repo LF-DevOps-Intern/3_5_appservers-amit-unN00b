@@ -118,4 +118,27 @@
 
 
  - Dump access log in a file in non-default pattern.
+
+ Because its not a good idea to run gunicorn as root, we need to create and change permissions of `/var/log/gunicorn.access.log`. Otherwise, while not running
+ as root, gunicorn daemon crashes silently.
+ 
+ ```console
+ # Create access log
+ sudo touch /var/log/gunicorn.access.log
+ 
+ # Change owner to current user
+ sudo chown gunicorn /var/log/gunicorn.access.log
+ sudo chgrp gunicorn /var/log/gunicorn.access.log
+ 
+ # Enforce hardened permission
+ sudo chmod 550 /var/log/gunicorn.access.log
+ 
+ gunicorn assignment.wsgi --name assignment-django --workers 3 --bind :8089 \
+ --access-logfile /var/log/gunicorn.access.log \
+ --access-logformat "%(h)s--(%t)s-(%r)s" --daemon
+ ```
+ 
+ ![image](https://user-images.githubusercontent.com/23631617/141682075-856e5ff3-05f1-43d6-84e8-f1f82443f211.png)
+
+ 
  - Dump error log in a file.
