@@ -13,7 +13,7 @@
 
       ```console
       # Download
-      wget https://github.com/eclipse-ee4j/glassfish/releases/download/6.2.2/glassfish-6.2.2.zip -o glassfish.zip
+      wget https://github.com/eclipse-ee4j/glassfish/releases/download/6.2.2/glassfish-6.2.2.zip -O glassfish.zip
 
       # Extract
       unzip glassfish.zip
