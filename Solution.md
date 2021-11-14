@@ -131,10 +131,11 @@
  sudo chgrp gunicorn /var/log/gunicorn.access.log
  
  # Enforce hardened permission
- sudo chmod 550 /var/log/gunicorn.access.log
+ sudo chmod 660 /var/log/gunicorn.access.log
  
+ # Start Gunicorn as daemon with our custom log format
  gunicorn assignment.wsgi --name assignment-django --workers 3 --bind :8089 \
- --access-logfile /var/log/gunicorn.access.log \ 
+ --access-logfile /var/log/gunicorn.access.log \
  --access-logformat '"%(h)s ---  %(t)s "%(r)s" "%(a)s"' --daemon
  ```
  
@@ -142,3 +143,19 @@
 
  
  - Dump error log in a file.
+
+Following the same steps to secure error log file because it can potentially contain sensitive information.
+
+```console
+ # Create access log
+ sudo touch /var/log/gunicorn.error.log
+ 
+ # Change owner to current user
+ sudo chown gunicorn /var/log/gunicorn.error.log
+ sudo chgrp gunicorn /var/log/gunicorn.error.log
+ 
+ # Enforce hardened permission
+ sudo chmod 660 /var/log/gunicorn.error.log 
+ ```
+ 
+ ![Error log](https://user-images.githubusercontent.com/23631617/141682686-bf72bb8c-66bb-474c-b378-75c28bc00434.png)
