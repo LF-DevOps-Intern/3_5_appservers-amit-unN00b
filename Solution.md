@@ -134,11 +134,11 @@
  sudo chmod 550 /var/log/gunicorn.access.log
  
  gunicorn assignment.wsgi --name assignment-django --workers 3 --bind :8089 \
- --access-logfile /var/log/gunicorn.access.log \
- --access-logformat "%(h)s--(%t)s-(%r)s" --daemon
+ --access-logfile /var/log/gunicorn.access.log \ 
+ --access-logformat '"%(h)s ---  %(t)s "%(r)s" "%(a)s"' --daemon
  ```
  
- ![image](https://user-images.githubusercontent.com/23631617/141682075-856e5ff3-05f1-43d6-84e8-f1f82443f211.png)
+ ![image](https://user-images.githubusercontent.com/23631617/141682305-99c12700-ffc1-4c7f-bb77-336ff05088fc.png)
 
  
  - Dump error log in a file.
