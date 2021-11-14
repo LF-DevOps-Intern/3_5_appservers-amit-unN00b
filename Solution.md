@@ -111,6 +111,10 @@
  
  # Run Gunicorn with 3 workers as a deamon
  gunicorn assignment.wsgi --name assignment-django --workers 3 --daemon --bind :8089
+ 
+ ![image](https://user-images.githubusercontent.com/23631617/141671811-e7b0c301-1490-45dd-a95e-45603e297f57.png)
+ ![image](https://user-images.githubusercontent.com/23631617/141671828-8fa88cf7-9fd4-4ed1-b3b0-bdb314a5e514.png) 
+
 
  - Dump access log in a file in non-default pattern.
  - Dump error log in a file.
