@@ -99,7 +99,8 @@
  django-admin startproject assignment src/
  ```
  
- ![Initialized Django Inside Virtualenv](https://user-images.githubusercontent.com/23631617/141670554-aecd9059-6510-4f92-b87a-aa0fed840bec.png)
+ ![Initialized Django Inside Virtualenv](https://user-images.githubusercontent.com/23631617/141670629-f8ba5e7d-df76-4251-af38-5ee43777c104.png)
+
 
  
  - Deploy the 3 instance of application using Gunicorn in 8089 port.
