@@ -102,19 +102,15 @@
  ![Initialized Django Inside Virtualenv](https://user-images.githubusercontent.com/23631617/141670629-f8ba5e7d-df76-4251-af38-5ee43777c104.png)
  
  - Deploy the 3 instance of application using Gunicorn in 8089 port.
+
+ During deployment, we disable `debug` mode and add our hostname to `ALLOWED_HOSTS` inside `settings.py`. Since this is just a demo project, it is not changed.
  
  ```console
- # Creating 3 applications under the project
- 
  # Navigate to project directory
  cd ~/assignment-django/src
  
- # Create 3 dummy apps
- django-admin startapp blog
- django-admin startapp support
- django-admin startapp ecommerce
- 
- 
+ # Run Gunicorn with 3 workers as a deamon
+ gunicorn assignment.wsgi --name assignment-django --workers 3 --daemon --bind :8089
 
  - Dump access log in a file in non-default pattern.
  - Dump error log in a file.
