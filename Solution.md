@@ -38,29 +38,17 @@
    
    # To create demo applicaion
    mvn archetype:generate -DgroupId=np.com.pranavp.app -DartifactId=assignment-maven \
-   -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+   -DarchetypeArtifactId=maven-archetype-webapp -DarchetypeVersion=1.4 -DinteractiveMode=false
    ```
    
    Since we are not using any tests, we don't need to enable test plugin and we can also remove test folder.
    
-   To compile the project with Java 11, we need to edit `pom.xml` and remove the whole `<properties>` and `<build>` tags and replace them with
+   To compile the project with Java 11, we need to edit `pom.xml` and remove all the children of `<properties>` tag and replace them with
    
    ```xml
    <properties>
     <maven.compiler.release>11</maven.compiler.release>
    </properties>
-
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.6.0</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
    ```
 
  - Generate war package.
