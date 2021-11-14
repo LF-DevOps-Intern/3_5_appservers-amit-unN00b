@@ -80,6 +80,28 @@
 
 ### Gunicorn
  - Create Django starter project in a separate virtual environment.
+
+ ```console
+ # Create virtual environment
+ virtualenv ~/assignment-django -p 3
+ 
+ # Activate virtual environment
+ source ~/assignment-django/bin/activate
+ 
+ # Install Django and gunicorn
+ pip install django gunicorn
+ 
+ # Make source directory - src
+ cd ~/assignment-django/
+ mkdir src
+ 
+ # Initialize Django project under src directory
+ django-admin startproject assignment src/
+ ```
+ 
+ ![Initialized Django Inside Virtualenv](https://user-images.githubusercontent.com/23631617/141670554-aecd9059-6510-4f92-b87a-aa0fed840bec.png)
+
+ 
  - Deploy the 3 instance of application using Gunicorn in 8089 port.
  - Dump access log in a file in non-default pattern.
  - Dump error log in a file.
