@@ -77,6 +77,7 @@
  
  ![image](https://user-images.githubusercontent.com/23631617/141670205-9592bf38-6558-46d7-a325-38ad7228c098.png)
 
+---
 
 ### Gunicorn
  - Create Django starter project in a separate virtual environment.
