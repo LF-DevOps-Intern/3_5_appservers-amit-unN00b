@@ -31,6 +31,24 @@
 
 
  - Create a demo Java (11) servlet application with maven.
+   
+   ```console
+   # To install Maven
+   apt install maven
+   
+   # To create demo applicaion
+   mvn archetype:generate -DgroupId=np.com.pranavp.app -DartifactId=assignment-maven \
+   -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+   ```
+   
+   Edit `pom.xml` and remove the whole `<properties>` tag and replace it with
+   
+   ```xml
+   <properties>
+    <maven.compiler.release>11</maven.compiler.release>
+   </properties>
+   ```
+
  - Generate war package.
  - Deploy the war using glassfish app server.
 
