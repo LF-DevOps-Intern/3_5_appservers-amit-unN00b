@@ -52,7 +52,22 @@
    ```
 
  - Generate war package.
+
+  The project that we created already has war plugin enabled. So, we can issue the following command to generate war package.
+  
+  ```console
+  cd ~/assignment-maven
+  mvn package
+  ```
+  
+  Now the war file is generated at `~/assignment-maven/target/assignment-maven.war`.
+ 
  - Deploy the war using glassfish app server.
+
+ ![image](https://user-images.githubusercontent.com/23631617/141670169-556012c0-e0ab-4eaf-9657-5a3afa19b9fe.png)
+ 
+ ![image](https://user-images.githubusercontent.com/23631617/141670205-9592bf38-6558-46d7-a325-38ad7228c098.png)
+
 
 ### Gunicorn
  - Create Django starter project in a separate virtual environment.
